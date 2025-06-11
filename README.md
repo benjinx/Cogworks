@@ -17,5 +17,5 @@ Install the latest release using the Unity Package Manager by adding the followi
 
 or you can add the latest release by adding the Git URL to the Package Manager Window inside of Unity.
 
-![Images/img.png](Images/img.png)
-![Images/img_1.png](Images/img_1.png)
+![Images/img.png](./Images/img.png)
+![Images/img_1.png](./Images/img_1.png)
