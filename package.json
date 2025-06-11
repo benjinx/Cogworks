@@ -1,0 +1,24 @@
+{
+  "name": "com.froggygames.cogworks",
+  "displayName": "Froggy Games Cogworks",
+  "version": "0.0.1",
+  "unity": "6000.0",
+  "unityRelease": "30f1",
+  "description": "Froggy Games Utility Library",
+  "keywords": [
+    "froggy",
+    "games",
+    "cogworks",
+    "froggy games",
+    "froggy games cogworks"
+  ],
+  "author": {
+    "name": "Froggy Games",
+    "email": "N/A",
+    "url": "N/A"
+  },
+  "type": "library",
+  "dependencies": {
+    
+  }
+}
