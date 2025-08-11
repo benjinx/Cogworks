@@ -40,7 +40,7 @@ public class LevelSystem : MonoBehaviour
     // Oldschool Runescape-like XP formula, for fun
     private const float EulerMascheroni = 0.5772156649f; // y (Euler-Mascheroni constant)
 
-    private int CalculateXPForLevel2(int level)
+    private int CalculateXPForLevelOSRS(int level)
     {
         if (level <= 1) return 0; // Level 1 requires no xp
 

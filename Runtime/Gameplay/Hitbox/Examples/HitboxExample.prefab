@@ -61,6 +61,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -116,7 +119,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 467112328866473201}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 460aa71b892c2f74dbda380b38900fd6, type: 3}
+  m_Script: {fileID: 11500000, guid: ab5490f5d6b37c34d9f9e4ebdb044818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   debugGizmos: 0
@@ -130,7 +133,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -3798551269904297146}
-        m_TargetAssemblyTypeName: HitboxExample, Assembly-CSharp
+        m_TargetAssemblyTypeName: HitboxExample, FroggyGames.Cogworks
         m_MethodName: OnHit
         m_Mode: 1
         m_Arguments:
@@ -150,6 +153,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 467112328866473201}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ddca899fdd4a98408632547747dfcb9, type: 3}
+  m_Script: {fileID: 11500000, guid: 88e0be9aa32d1ba41b665102d5d62f9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
