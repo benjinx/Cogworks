@@ -1,0 +1,19 @@
+{
+    "name": "FroggyGames.Cogworks.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:20ae530db40a401479816d11611014b9",
+        "GUID:ef6dbcc3367f9584ba9c296386fcaca4"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

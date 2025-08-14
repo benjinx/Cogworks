@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb962525bd776b4c81c78f547e7e0cb, type: 3}
+  m_Name: Chestplate
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: fc8e8bf83ab53394fb677f5058ddc828, type: 3}
+  itemName: Chestplate
+  itemDescription: 
+  rarityType: 0
+  itemType: 0
+  equipmentType: 2
+  classRequirement: 31
+  levelRequirement: 0
+  strengthRequirement: 0
+  dexterityRequirement: 0
+  intelligenceRequirement: 0
+  statModifiers: []
+  armorType: 3

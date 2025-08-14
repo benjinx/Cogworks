@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a76c5d31adf1d9e4e992f82a44fba930, type: 3}
+  m_Name: Ring of Str
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: dcb2de7d1e5a95042a8b698f3e79090a, type: 3}
+  itemName: Ring of Str
+  itemDescription: 
+  rarityType: 0
+  itemType: 0
+  equipmentType: 3
+  classRequirement: 31
+  levelRequirement: 0
+  strengthRequirement: 0
+  dexterityRequirement: 0
+  intelligenceRequirement: 0
+  statModifiers:
+  - modifierName: Ring of Str
+    description: Str
+    statType: 0
+    statModifierType: 0
+    value: 5
+    isTemporary: 0
+    duration: 0
+    onExpire:
+      m_PersistentCalls:
+        m_Calls: []
+  jewelryType: 0

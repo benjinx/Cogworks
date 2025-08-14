@@ -1,0 +1,201 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6228535899971425005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8132994919638609159}
+  - component: {fileID: 3321797552390970770}
+  - component: {fileID: 3983329279955322522}
+  - component: {fileID: 5111626180681325484}
+  - component: {fileID: 5643612246443671209}
+  - component: {fileID: 1783776070383064045}
+  m_Layer: 0
+  m_Name: Warrior
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8132994919638609159
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6228535899971425005}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 777.23883, y: 651.93585, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3321797552390970770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6228535899971425005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84a434e03e83093488aaa5d34d1f0b47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats:
+    m_Keys: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a000000
+    m_Values:
+    - type: 0
+      baseValue: 11
+      onStatChange:
+        m_PersistentCalls:
+          m_Calls: []
+      modifiers: []
+    - type: 1
+      baseValue: 5
+      onStatChange:
+        m_PersistentCalls:
+          m_Calls: []
+      modifiers: []
+    - type: 2
+      baseValue: 3
+      onStatChange:
+        m_PersistentCalls:
+          m_Calls: []
+      modifiers: []
+    - type: 3
+      baseValue: 67
+      onStatChange:
+        m_PersistentCalls:
+          m_Calls: []
+      modifiers: []
+    - type: 4
+      baseValue: 0
+      onStatChange:
+        m_PersistentCalls:
+          m_Calls: []
+      modifiers: []
+    - type: 5
+      baseValue: 0
+      onStatChange:
+        m_PersistentCalls:
+          m_Calls: []
+      modifiers: []
+    - type: 6
+      baseValue: 0
+      onStatChange:
+        m_PersistentCalls:
+          m_Calls: []
+      modifiers: []
+    - type: 7
+      baseValue: 0
+      onStatChange:
+        m_PersistentCalls:
+          m_Calls: []
+      modifiers: []
+    - type: 8
+      baseValue: 0
+      onStatChange:
+        m_PersistentCalls:
+          m_Calls: []
+      modifiers: []
+    - type: 9
+      baseValue: 0
+      onStatChange:
+        m_PersistentCalls:
+          m_Calls: []
+      modifiers: []
+    - type: 10
+      baseValue: 0
+      onStatChange:
+        m_PersistentCalls:
+          m_Calls: []
+      modifiers: []
+--- !u!114 &3983329279955322522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6228535899971425005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 942f1d873a7070248b49f9bbd74edaff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  experience: 0
+  onLevelUp:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5111626180681325484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6228535899971425005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e5751f9f9d2f354683246e4779bd9e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5643612246443671209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6228535899971425005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b52f8590c0cf4044b0bacb785c5ba00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterClass: 1
+  equippedItems:
+    m_Keys: 
+    m_Values: []
+  OnEquipped:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUnequipped:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1783776070383064045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6228535899971425005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073646ff73e2bd94daa89f144be7a727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
+  equipment:
+  - {fileID: 11400000, guid: ed0ae7f723583a2428f2791dbc43bd49, type: 2}
+  - {fileID: 11400000, guid: 902d1f0c54e610a41952120cf583933c, type: 2}
+  - {fileID: 11400000, guid: b93317bf891a1fc4fa57b595381bcd44, type: 2}
+  - {fileID: 11400000, guid: 72cefd215b132e6419b72473810f700e, type: 2}
+  - {fileID: 11400000, guid: c4f7f8478c9ed664a972fde26dc56884, type: 2}
+  - {fileID: 11400000, guid: 2e90b595f4bd7aa478b424e33f845dff, type: 2}
+  - {fileID: 11400000, guid: e4d0bb3422aa33142aebedd5c396cb16, type: 2}
+  - {fileID: 11400000, guid: 1fbcba03020dd044787c7b796d29f509, type: 2}
+  - {fileID: 11400000, guid: 875f53ce22c65f74e9fea36cfd4e1b01, type: 2}
+  - {fileID: 11400000, guid: 72ab5449c25acaa4ba250a297982a57e, type: 2}
+  - {fileID: 11400000, guid: 1bb8275649ddb8a43801eb42e92b67d1, type: 2}
+  - {fileID: 11400000, guid: 279b3cd42837d794b9f112a825ef2601, type: 2}
+  - {fileID: 11400000, guid: 845ec1133dfd61443b6f85e3688bddb9, type: 2}
+  - {fileID: 11400000, guid: 33f69e181b54dcd4aae76edbcd5883eb, type: 2}
+  - {fileID: 11400000, guid: 375e7cbbf19a6fc4c90410f79ae38a53, type: 2}
+  - {fileID: 11400000, guid: 4bd47fa14a831fe4c8a28a6a30691874, type: 2}
+  - {fileID: 11400000, guid: 4c5a38e8c768b4e4895ccc87a414bc10, type: 2}
