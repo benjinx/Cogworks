@@ -75,6 +75,11 @@ public class Health : MonoBehaviour
         {
             health = 1;
         }
+        
+        if (currentHealth <= 0)
+        {
+            currentHealth = 1;
+        }
 
         Heal(health);
         onRevive?.Invoke();
