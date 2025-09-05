@@ -27,11 +27,8 @@ public class Stamina : MonoBehaviour
             currentStamina = 0;
             onEmpty?.Invoke();
         }
-        else
-        {
-            onDecrease?.Invoke(amount);
-        }
-
+        
+        onDecrease?.Invoke(amount);
         onStaminaChanged?.Invoke(amount);
     }
 
