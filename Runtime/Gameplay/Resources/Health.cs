@@ -10,6 +10,7 @@ public class Health : MonoBehaviour
     public UnityEvent<int> onDamage;
     public UnityEvent<int> onHeal;
     public UnityEvent onDeath;
+    public UnityEvent onRevive;
 
     void Start()
     {
@@ -76,6 +77,7 @@ public class Health : MonoBehaviour
         }
 
         Heal(health);
+        onRevive?.Invoke();
     }
 
     public bool IsAlive()
