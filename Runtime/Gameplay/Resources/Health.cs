@@ -87,7 +87,7 @@ public class Health : MonoBehaviour
 
     public bool IsAlive()
     {
-        if (currentHealth < 0)
+        if (currentHealth <= 0)
         {
             return false;
         }
