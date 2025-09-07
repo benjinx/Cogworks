@@ -1,42 +1,33 @@
 [System.Serializable]
-public abstract class State
+public class State<T>
 {
-    public State currentSubState;
-
-    public void OnStateEnter()
+    public enum StateType
     {
-        OnEnter();
-    }
-
-    protected virtual void OnEnter(){}
-
-    public void OnStateUpdate()
-    {
-        OnUpdate();
+        Base,
+        Overlay,
+        Action
     }
     
-    protected virtual void OnUpdate(){}
+    protected T stateMachine;
 
-    public void OnStateFixedUpdate()
+    public StateType stateType;
+
+    public State(T stateMachine, StateType stateType)
     {
-        OnFixedUpdate();
+        this.stateMachine = stateMachine;
+        this.stateType = stateType;
     }
+
+    public virtual bool CanEnterState() => true;
     
-    protected virtual void OnFixedUpdate() {}
+    public virtual void OnEnter(){}
+    
+    public virtual void OnUpdate(){}
+    
+    public virtual void OnFixedUpdate() {}
+    
+    public virtual void OnExit(){}
 
-    public void OnStateExit()
-    {
-        OnExit();
-    }
-
-    protected virtual void OnExit(){}
-
-    public void TransitionStateToSubState(State newSubState)
-    {
-        currentSubState.OnStateExit();
-        currentSubState = newSubState;
-        currentSubState.OnStateEnter();
-    }
-
-    protected virtual void ActionCompleted(){}
+    // Used for action states
+    public virtual bool IsFinished() => false;
 }

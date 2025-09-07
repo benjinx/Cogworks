@@ -1,27 +1,6 @@
-using UnityEngine;
-
-public class ExampleState : State
+public abstract class ExampleState : State<ExampleStateMachine>
 {
-    [HideInInspector]
-    public ExampleStateMachine exampleStateMachine;
-
-    protected override void OnEnter()
+    protected ExampleState(ExampleStateMachine stateMachine, StateType stateType) : base(stateMachine, stateType)
     {
-
-    }
-
-    protected override void OnUpdate()
-    {
-
-    }
-
-    protected override void OnFixedUpdate()
-    {
-
-    }
-
-    protected override void OnExit()
-    {
-        
     }
 }

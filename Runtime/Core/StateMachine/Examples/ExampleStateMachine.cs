@@ -1,10 +1,12 @@
-public class ExampleStateMachine : StateMachine
-{
-    ExampleState exampleState = new ExampleState();
+using System;
 
-    protected override void Start()
+public class ExampleStateMachine : StateMachine<ExampleState, ExampleStateMachine>
+{
+    private ExampleState exampleState;
+
+    public void Awake()
     {
-        exampleState.exampleStateMachine = this;
+        exampleState = new ExampleBaseState(this);
     }
 
     protected override void Update()
