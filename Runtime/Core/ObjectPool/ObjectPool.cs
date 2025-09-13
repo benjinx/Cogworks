@@ -78,7 +78,7 @@ public class ObjectPool : MonoBehaviour
 
         if (!suppressEvents)
         {
-            gobj.GetComponent<PooledObject>()?.OnSpawned();
+            gobj.GetComponent<PooledObject>()?.OnSpawn();
         }
     }
 
@@ -90,7 +90,7 @@ public class ObjectPool : MonoBehaviour
 
         if (!suppressEvents)
         {
-            gobj.GetComponent<PooledObject>()?.OnDespawned();
+            gobj.GetComponent<PooledObject>()?.OnDespawn();
         }
     }
 
