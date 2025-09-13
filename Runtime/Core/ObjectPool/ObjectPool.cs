@@ -6,8 +6,8 @@ public class ObjectPool : MonoBehaviour
 {
     public enum PoolType
     {
-        Stack,
-        LinkedList
+        Stack, // FILO, push/pop as a normal stack, most common
+        LinkedList // Used for lots of temporary pooled objects created and released quickly
     }
 
     public PoolType poolType;
@@ -18,15 +18,19 @@ public class ObjectPool : MonoBehaviour
 
     public int maxPoolSize = 10;
 
-    // Collection checks will throw errors if we try to release an item that is already in the pool
-    public bool collectionCheck = true;
+    public bool collectionCheck = false;
 
     // So due to how the unity object pool works, it doesn't preheat the objects,
-    // if we'd like to i'll allow it, but i wouldn't recommend it
+    // if we'd like to i'll allow it
     public bool shouldPreheat = false;
 
-    public IObjectPool<GameObject> pool;
+    // how many should we preheat
+    public int preheatAmount = 0;
 
+    // Used in preheat, allows us to not fire off onspawn/ondespawn for it.
+    private bool suppressEvents = false;
+
+    public IObjectPool<GameObject> pool;
 
     void Awake()
     {
@@ -58,9 +62,12 @@ public class ObjectPool : MonoBehaviour
 
     private GameObject CreatePooledObject()
     {
-        GameObject gobj = Instantiate(objectToPool);
+        GameObject gobj = Instantiate(objectToPool, transform, true);
 
-        gobj.AddComponent<PooledObject>();
+        if (!gobj.TryGetComponent<PooledObject>(out _))
+        {
+            gobj.AddComponent<PooledObject>();
+        }
 
         return gobj;
     }
@@ -69,18 +76,22 @@ public class ObjectPool : MonoBehaviour
     {
         gobj.SetActive(true);
 
-        PooledObject pooledObject = gobj.GetComponent<PooledObject>();
-
-        pooledObject.OnSpawned();
+        if (!suppressEvents)
+        {
+            gobj.GetComponent<PooledObject>()?.OnSpawned();
+        }
     }
 
     private void OnReturnToPool(GameObject gobj)
     {
         gobj.SetActive(false);
 
-        PooledObject pooledObject = gobj.GetComponent<PooledObject>();
+        gobj.transform.SetParent(transform);
 
-        pooledObject.OnDespawned();
+        if (!suppressEvents)
+        {
+            gobj.GetComponent<PooledObject>()?.OnDespawned();
+        }
     }
 
     private void OnDestroyPooledObject(GameObject gobj)
@@ -90,24 +101,22 @@ public class ObjectPool : MonoBehaviour
 
     private void Preheat()
     {
-        List<GameObject> tmpPreheatList = new List<GameObject>();
+        suppressEvents = true;
 
-        for (int i = 0; i < startPoolSize; ++i)
+        List<GameObject> tmp = new List<GameObject>();
+
+        // Create the desired amount
+        for (int i = 0; i < preheatAmount; ++i)
         {
-            // Create the amount we're looking for.
-            GameObject gobj = pool.Get();
-
-            // Set parent to this pool object
-            gobj.transform.parent = transform;
-
-            // Add to the preheat list so we can release after
-            tmpPreheatList.Add(gobj);
+            tmp.Add(pool.Get());
         }
 
         // Release all now that they're been created
-        for (int i = 0; i < tmpPreheatList.Count; ++i)
+        for (int i = 0; i < tmp.Count; ++i)
         {
-            pool.Release(tmpPreheatList[i]);
+            pool.Release(tmp[i]);
         }
+
+        suppressEvents = false;
     }
 }
