@@ -14,18 +14,13 @@ public class ObjectPool : MonoBehaviour
 
     public GameObject objectToPool;
 
-    public int startPoolSize = 10;
+    // So due to how the unity object pool works, it doesn't preheat the objects, but we will if
+    // this number is greater than 0
+    public int startPoolSize = 0;
 
     public int maxPoolSize = 10;
 
-    public bool collectionCheck = false;
-
-    // So due to how the unity object pool works, it doesn't preheat the objects,
-    // if we'd like to i'll allow it
-    public bool shouldPreheat = false;
-
-    // how many should we preheat
-    public int preheatAmount = 0;
+    private bool collectionCheck = false;
 
     // Used in preheat, allows us to not fire off onspawn/ondespawn for it.
     private bool suppressEvents = false;
@@ -43,7 +38,7 @@ public class ObjectPool : MonoBehaviour
             startPoolSize,
             maxPoolSize);
 
-        if (shouldPreheat)
+        if (startPoolSize > 0)
         {
             Preheat();
         }
@@ -73,14 +68,14 @@ public class ObjectPool : MonoBehaviour
 
     private void OnReturnToPool(GameObject gobj)
     {
-        gobj.SetActive(false);
-
-        gobj.transform.SetParent(transform);
-
         if (!suppressEvents)
         {
             gobj.GetComponent<PooledObject>()?.OnDespawn();
         }
+
+        gobj.SetActive(false);
+
+        gobj.transform.SetParent(transform);
     }
 
     private void OnDestroyPooledObject(GameObject gobj)
@@ -95,7 +90,7 @@ public class ObjectPool : MonoBehaviour
         List<GameObject> tmp = new List<GameObject>();
 
         // Create the desired amount
-        for (int i = 0; i < preheatAmount; ++i)
+        for (int i = 0; i < startPoolSize; ++i)
         {
             tmp.Add(pool.Get());
         }
