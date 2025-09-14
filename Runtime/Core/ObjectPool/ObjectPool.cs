@@ -4,13 +4,13 @@ using UnityEngine.Pool;
 
 public class ObjectPool : MonoBehaviour
 {
-    public enum PoolType
-    {
-        Stack, // FILO, push/pop as a normal stack, most common
-        LinkedList // Used for lots of temporary pooled objects created and released quickly
-    }
+    // public enum PoolType
+    // {
+    //     Stack, // FILO, push/pop as a normal stack, most common
+    //     LinkedList // Used for lots of temporary pooled objects created and released quickly
+    // }
 
-    public PoolType poolType;
+    // public PoolType poolType;
 
     public GameObject objectToPool;
 
@@ -30,29 +30,18 @@ public class ObjectPool : MonoBehaviour
     // Used in preheat, allows us to not fire off onspawn/ondespawn for it.
     private bool suppressEvents = false;
 
-    public IObjectPool<GameObject> pool;
+    public ObjectPool<GameObject> pool;
 
     void Awake()
     {
-        if (poolType == PoolType.Stack)
-        {
-            pool = new ObjectPool<GameObject>(CreatePooledObject,
-              OnGetFromPool,
-              OnReturnToPool,
-              OnDestroyPooledObject,
-              collectionCheck,
-              startPoolSize,
-              maxPoolSize);
-        }
-        else if (poolType == PoolType.LinkedList)
-        {
-            pool = new LinkedPool<GameObject>(CreatePooledObject,
-                      OnGetFromPool,
-                      OnReturnToPool,
-                      OnDestroyPooledObject,
-                      collectionCheck,
-                      maxPoolSize);
-        }
+        pool = new ObjectPool<GameObject>(
+            CreatePooledObject,
+            OnGetFromPool,
+            OnReturnToPool,
+            OnDestroyPooledObject,
+            collectionCheck,
+            startPoolSize,
+            maxPoolSize);
 
         if (shouldPreheat)
         {
@@ -111,7 +100,7 @@ public class ObjectPool : MonoBehaviour
             tmp.Add(pool.Get());
         }
 
-        // Release all now that they're been created
+        // Release all now that they've been created
         for (int i = 0; i < tmp.Count; ++i)
         {
             pool.Release(tmp[i]);
