@@ -1,7 +1,7 @@
 {
   "name": "com.froggygames.cogworks",
   "displayName": "Froggy Games Cogworks",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "unity": "6000.0",
   "unityRelease": "30f1",
   "description": "Froggy Games Utility Library",
@@ -14,8 +14,11 @@
   ],
   "author": {
     "name": "Froggy Games",
-    "email": "N/A",
-    "url": "N/A"
+    "url": "N/A",
+    "email": "N/A"
   },
-  "type": "library"
+  "type": "library",
+  "dependencies": {
+    "com.unity.splines": "2.8.4"
+  }
 }

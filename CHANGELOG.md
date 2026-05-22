@@ -1,5 +1,27 @@
 # Change Log
 
+## 0.0.4
+Added dependency for unity spline package.
+
+Added SingletonManager, this is used to be able to easily create a singleton with a simple pattern.
+```
+private void Awake()
+{
+    if (!SingletonManager.CreateSingleton(this))
+    {
+        return;
+    }
+}
+```
+
+Addition of DeviceManager that will detect the currently active device, this is used for the new DeviceSpecificDisplay which is used to swap UI elements based on the currently active device (Mouse/Keyboard, Xbox Controller, Playstation Controller, or Switch Controller). There's another DeviceSpecificDisplay for the UIToolKit while using InputIconSet, but this is still in development.
+
+Added Misc Trigger and Swap Trigger.
+- Misc Trigger is used to trigger via unity event any OnTriggerEnter, OnTriggerExit, and OnTriggerStay
+- Swap Tigger allows swapping between two GameObjects
+
+Added UVScroller
+
 ## 0.0.3
 Addition of the equipment system
 
