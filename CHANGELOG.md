@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.0.5
+Added: ExampleStateControllerEditor (Create one for each state controller), MouseManager, ControllerRumbler, GameManagerExample.
+
+Removal of Hurtbox.
+
+Relocation of DeviceManager to new Devices folder.
+
 ## 0.0.4
 Added dependency for unity spline package.
 
