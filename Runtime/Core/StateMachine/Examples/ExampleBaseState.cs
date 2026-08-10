@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ExampleBaseState : ExampleState
 {
-    public ExampleBaseState(ExampleStateMachine stateMachine) : base(stateMachine, StateType.Base)
+    public ExampleBaseState(ExampleStateMachine stateMachine) : base(stateMachine)
     {
     }
 

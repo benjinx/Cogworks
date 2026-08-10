@@ -1,25 +1,17 @@
 [System.Serializable]
 public class State<T>
 {
-    public enum StateType
-    {
-        Base,
-        Overlay,
-        Action
-    }
-    
     protected T stateMachine;
 
-    public StateType stateType;
-
-    public State(T stateMachine, StateType stateType)
+    public State(T stateMachine)
     {
         this.stateMachine = stateMachine;
-        this.stateType = stateType;
     }
 
     public virtual bool CanEnterState() => true;
     
+    public virtual bool CanExitState() => true;
+
     public virtual void OnEnter(){}
     
     public virtual void OnUpdate(){}
@@ -27,7 +19,4 @@ public class State<T>
     public virtual void OnFixedUpdate() {}
     
     public virtual void OnExit(){}
-
-    // Used for action states
-    public virtual bool IsFinished() => false;
 }

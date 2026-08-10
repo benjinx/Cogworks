@@ -1,6 +1,6 @@
 public abstract class ExampleState : State<ExampleStateMachine>
 {
-    protected ExampleState(ExampleStateMachine stateMachine, StateType stateType) : base(stateMachine, stateType)
+    protected ExampleState(ExampleStateMachine stateMachine) : base(stateMachine)
     {
     }
 }

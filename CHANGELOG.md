@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.0.6
+Rework of the state and statemachine. We're moving away from the multi-layered state system. It was over complicating things and we can accomplish the same thing with multiple versions of a normal state/statemachine setup.
+
 ## 0.0.5
 Added: ExampleStateControllerEditor (Create one for each state controller), MouseManager, ControllerRumbler, GameManagerExample.
 
